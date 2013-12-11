@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">        
+    </head>
+    <body>
+        <h3>前往線上刷卡頁面......</h3>
+        <form action="{ESUN_AUTHORIZED_URL}" method="post" name="card_form">
+            <!-- START BLOCK : CARD_FIELD_LIST -->
+            <input type="hidden" name="{TAG_KEY}" value="{TAG_VALUE}"/><br/>
+            <!-- END BLOCK : CARD_FIELD_LIST -->
+        </form>
+        <script type="text/javascript">
+            document.card_form.submit();
+        </script>
+    </body>
+</html>
