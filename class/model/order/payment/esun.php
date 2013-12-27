@@ -45,7 +45,7 @@ class Model_Order_Payment_Esun {
             "TAG_KEY"   => "M",
             "TAG_VALUE" => $code[1]
         ));
-        $tpl->assignGlobal("ESUN_AUTHORIZED_URL",$this->url[$this->mode]);
+        $tpl->assignGlobal("AUTHORIZED_URL",$this->url[$this->mode]);
         $tpl->printToScreen();
     }
     //製作押碼
