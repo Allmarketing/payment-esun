@@ -47,6 +47,7 @@ class Model_Order_Payment_Esun {
         ));
         $tpl->assignGlobal("AUTHORIZED_URL",$this->url[$this->mode]);
         $tpl->printToScreen();
+        die();
     }
     //製作押碼
     function make_code($codedata){
