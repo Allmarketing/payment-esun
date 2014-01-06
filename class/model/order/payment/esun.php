@@ -79,7 +79,10 @@ class Model_Order_Payment_Esun {
                         . "where o_id='".$db->quote($oid)."'";
             }
         }
-        $db->query($sql,true);
+        //$db->query($sql,true);
+        //$sql = "select * from ".$db->prefix("order")." where o_id='".$oid."'";
+        //return $db->query_firstRow($sql,true);
+        return $sql;
     }
     //驗證回傳結果
     function validate($result){
