@@ -21,7 +21,6 @@ class Model_Order_Payment_Esun {
     function checkout($o_id,$total_price,$extra_info=array()){
         $this->codedata['ono'] = strtoupper($o_id);
         $this->codedata['ta'] = $total_price;
-        $this->codedata['u'] = "http://localhost/payment_esun/card-test3.php";//授權結果回傳接收頁
         if(!empty($extra_info)){
             foreach($extra_info as $k => $v){
                 if(!isset($this->codedata[$k])){
