@@ -7,8 +7,9 @@ payment-esun
 前置設定
 ---------------
 1.設定conf/creditcard.php裡的 $cms_cfg['creditcard']['mid'] (特店編號)和 $cms_cfg['esunkey'] (MAC key)。<br/>
-2.變更class/model/order/payment/esun.php第24行，改為測試環境接收授權結果的url，依documents/網路收單系統交易規格.pdf第二頁的說明，URL不可包含【#】、【?】及【&】字元.
-
+2.設定conf/creditcard.php第7行的$cms_cfg['creditcard']['u']，改為測試環境接收授權結果的url，依documents/網路收單系統交易規格.pdf第二頁的說明，URL不可包含【#】、【?】及【&】字元.，因為回傳變數是以GET的方式傳遞。
+3.設定conf/creditcard.php第9行的$cms_cfg['exe_mode']，設為testing(測試)或running(正式)，主要影響到會使用哪一個串接網址
+4.依執行經驗，$cms_cfg['creditcard']變數裡的項目順序不可變動，不然會得到押碼錯誤的訊息
 
 測試流程
 ---------------
