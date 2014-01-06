@@ -54,7 +54,7 @@ class Model_Order_Payment_Esun {
         return array($input_str,md5($input_str));
     }
     //更新訂單
-    function update_order($db,$result){
+    function update_order(DB $db,$result){
         $oid = $result['ONO'];
         if($result['RC']=='00'){ //交易成功
             if($this->validate($result)){
