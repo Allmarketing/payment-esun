@@ -59,17 +59,27 @@ class Model_Order_Payment_Esun {
         if($result['RC']=='00'){ //交易成功
             if($this->validate($result)){
                 //更新訂單資料
-                $sql = "update ".$db->prefix("order")." set some_col = 'somevalue' .... where o_id='".$oid."'";
+                $sql = "update ".$db->prefix("order")." set "
+                        . "o_status = '1', "
+                        . "RC = '".$db->quote($result['RC'])."', "
+                        . "LTD = '".$db->quote($result['LTD'])."', "
+                        . "LTT = '".$db->quote($result['LTT'])."', "
+                        . "RRN = '".$db->quote($result['RRN'])."', "
+                        . "AIR = '".$db->quote($result['AIR'])."' "
+                        . "where o_id='".$db->quote($oid)."'";
             }else{
                 throw new Exception("return result doesn't valiated!");
             }
         }else{
             //更新訂單狀態
             if($result['RC']!='G6'){ //錯誤原因非訂單編號重複
-                $sql = "update ".$db->prefix("order")." set o_status='10' where o_id='".$oid."'";
+                $sql = "update ".$db->prefix("order")." set "
+                        . "o_status='21', "
+                        . "RC = '".$db->quote($result['RC'])."' "
+                        . "where o_id='".$db->quote($oid)."'";
             }
         }
-         return $sql;
+        $db->query($sql,true);
     }
     //驗證回傳結果
     function validate($result){
