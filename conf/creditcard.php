@@ -6,4 +6,5 @@ $cms_cfg['creditcard']['ono'] = "";
 $cms_cfg['creditcard']['ta'] = "";
 $cms_cfg['creditcard']['u'] = "http://localhost/payment_esun/card-test3.php";//授權結果回傳接收頁
 $cms_cfg['esunkey'] = "EOY1NX4G9H2D1FA20TDIFVODZDDAE24O";//mac key
+$cms_cfg['exe_mode'] = "testing";  //執行模式: testing or running
 ?>
